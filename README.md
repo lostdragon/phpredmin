@@ -3,6 +3,10 @@ PHPRedMin
 
 PHPRedMin is a simple web interface to manage and monitor your Redis.
 
+## Different with sasanrose's Repo
+Remove short_open_tag
+
+
 ## Technologies Used
 
 [Nanophp](https://github.com/sasanrose/NanoPHP) framework

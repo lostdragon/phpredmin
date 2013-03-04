@@ -4,10 +4,10 @@
         <?php foreach($this->config as $key => $value) {?>
             <tr>
                 <td>
-                    <?=$key?>
+                    <?php echo $key?>
                 </td>
                 <td>
-                    <?=$value?>
+                    <?php echo $value?>
                 </td>
             </tr>
         <?php } ?>

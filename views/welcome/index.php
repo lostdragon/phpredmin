@@ -6,22 +6,25 @@
         })
     });
 </script>
-<?=$this->renderPartial('generalmodals')?>
+<?php echo $this->renderPartial('generalmodals')?>
 <span class="span12" style="margin-bottom: 20px;">
     <?php foreach($this->dbs as $db) {
         if($db == $this->selectedDb) {
         ?>
             <a href="#" class="btn btn-primary disabled">
         <?php } else { ?>
-            <a href="<?=$this->router->url?>/welcome/index/<?=$db?>" class="btn">
+            <a href="<?php echo $this->router->url?>/welcome/index/<?php echo $db?>" class="btn">
         <?php } ?>
-            DB <?=$db?>
+            DB <?php echo $db?>
         </a>
     <?php } ?>
 </span>
 <span class="span12">
     <ul class="nav nav-tabs" id="redisTab">
         <li class="active">
+            <a href="#search">Search</a>
+        </li>
+        <li>
             <a href="#keys">Keys</a>
         </li>
         <li>
@@ -41,7 +44,7 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane fade active in" id="keys">
+        <div class="tab-pane fade active in" id="search">
             <form class="form-search" action="<?=$this->router->url?>/keys/search" method="post">
                 <legend>Search keys</legend>
                 <div class="alert alert-warning">
@@ -55,20 +58,25 @@
                 <button type="submit" class="btn"><i class="icon-search"></i> Search</button>
             </form>
         </div>
+        <div class="tab-pane fade" id="keys">
+            <legend>List keys</legend>
+            <iframe src="http://localhost/phpRedisAdmin/?overview" width="98%" height="600px">
+            </iframe>
+        </div>
         <div class="tab-pane fade" id="strings">
-            <?=$this->renderPartial('strings/add')?>
+            <?php echo $this->renderPartial('strings/add')?>
         </div>
         <div class="tab-pane fade" id="hashes">
-            <?=$this->renderPartial('hashes/add')?>
+            <?php echo $this->renderPartial('hashes/add')?>
         </div>
         <div class="tab-pane fade" id="lists">
-            <?=$this->renderPartial('lists/add')?>
+            <?php echo $this->renderPartial('lists/add')?>
         </div>
         <div class="tab-pane fade" id="sets">
-            <?=$this->renderPartial('sets/add')?>
+            <?php echo $this->renderPartial('sets/add')?>
         </div>
         <div class="tab-pane fade" id="sorted_sets">
-            <?=$this->renderPartial('zsets/add')?>
+            <?php echo $this->renderPartial('zsets/add')?>
         </div>
     </div>
 </span>

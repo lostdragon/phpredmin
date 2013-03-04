@@ -4,11 +4,11 @@
         PHPRedmin uses Eval to fetch slowlogs
     </div>
     <?php if ($this->support) { ?>
-        <h5><i class="icon-warning-sign"></i> Redis Slow Log (<?=$this->count?> most recent)</h5>
-        <form class="form-inline" action="<?=$this->router->url?>/welcome/slowlog" method="post">
+        <h5><i class="icon-warning-sign"></i> Redis Slow Log (<?php echo $this->count?> most recent)</h5>
+        <form class="form-inline" action="<?php echo $this->router->url?>/welcome/slowlog" method="post">
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-search"></i></span>
-                <input value="<?=$this->count?>" name="count" type="text" />
+                <input value="<?php echo $this->count?>" name="count" type="text" />
             </div>
             <input type="submit" class="btn" value="Change Count" />
         </form>
@@ -26,16 +26,16 @@
             </tr>
             <?php foreach ($this->slowlogs as $log) { ?>
                     <tr>
-                        <td><?=date('Y-m-d H:i:s', $log[1])?></td>
-                        <td><?=$log[2]?></td>
-                        <td><?=implode($log[3], ', ')?></td>
+                        <td><?php echo date('Y-m-d H:i:s', $log[1])?></td>
+                        <td><?php echo $log[2]?></td>
+                        <td><?php echo implode($log[3], ', ')?></td>
                     </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
         <div class="alert alert-danger">
             <a class="close" data-dismiss="alert" href="#">×</a>
-            Eval has been available since redis version 2.6.0 but your redis version is <?=$this->version?>
+            Eval has been available since redis version 2.6.0 but your redis version is <?php echo $this->version?>
         </div>
     <?php } ?>
 </span>

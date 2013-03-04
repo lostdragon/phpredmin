@@ -1,7 +1,7 @@
-<?=$this->renderPartial('actions')?>
+<?php echo $this->renderPartial('actions')?>
 <div class="span12">
-    <?=$this->renderPartial('sets/add', array('oldkey' => $this->key))?>
-    <h5><i class="icon-key"></i> <?=$this->key?></h5>
+    <?php echo $this->renderPartial('sets/add', array('oldkey' => $this->key))?>
+    <h5><i class="icon-key"></i> <?php echo $this->key?></h5>
     <table class="table table-striped settable">
         <tr>
             <th>Value</th>
@@ -11,15 +11,15 @@
         <?php foreach ($this->members as $member) { ?>
             <tr>
                 <td>
-                    <?=$member?>
+                    <?php echo $member?>
                 </td>
                 <td>
                     <a href="#" class="action del">
-                        <i class="icon-trash" id="<?=$member?>" keytype="sets" keyinfo="<?=$this->key?>"></i>
+                        <i class="icon-trash" id="<?php echo $member?>" keytype="sets" keyinfo="<?php echo $this->key?>"></i>
                     </a>
                 </td>
                 <td>
-                    <input type="checkbox" name="keys[]" value="<?=$member?>" />
+                    <input type="checkbox" name="keys[]" value="<?php echo $member?>" />
                 </td>
             </tr>
         <?php } ?>
@@ -30,15 +30,15 @@
                 <td>
                     <input type="checkbox" name="checkall" id="checkall" />
                     <a href="#" class="action moveall" style="margin-left: 10px;">
-                        <i class="icon-move" keytype="sets" keyinfo="<?=$this->key?>" modaltitle="Move value to?" modaltip="Destination Set">
+                        <i class="icon-move" keytype="sets" keyinfo="<?php echo $this->key?>" modaltitle="Move value to?" modaltip="Destination Set">
                         </i>
                     </a>
                     <a href="#" class="action delall" style="margin-left: 10px;">
-                        <i class="icon-trash" keytype="sets" keyinfo="<?=$this->key?>"></i>
+                        <i class="icon-trash" keytype="sets" keyinfo="<?php echo $this->key?>"></i>
                     </a>
                 </td>
             </tr>
         <?php } ?>
     </table>
 </div>
-<?=$this->renderPartial('generalmodals')?>
+<?php echo $this->renderPartial('generalmodals')?>

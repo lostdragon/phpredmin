@@ -1,5 +1,5 @@
 <?php $this->addHeader("<script src=\"{$this->router->baseUrl}/js/redmin/actions.js\" type=\"text/javascript\"></script>"); ?>
-<?=$this->renderPartial('generalmodals')?>
+<?php echo $this->renderPartial('generalmodals')?>
 <?php if (!isset($this->nomove) || !$this->nomove) { ?>
     <div id="move_confirmation" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="confirmation" aria-hidden="true">
         <div class="modal-header">

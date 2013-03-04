@@ -11,13 +11,13 @@
         </div>
     <?php } ?>
     <?php if (!isset($this->edited) || (isset($this->edited) && !$this->edited)) { ?>
-        <form class="form" action="<?=$this->router->url?>/strings/view" method="post">
+        <form class="form" action="<?php echo $this->router->url?>/strings/view" method="post">
             <legend>Edit key</legend>
-            <h5><?=$this->key?></h5>
+            <h5><?php echo $this->key?></h5>
             <div>
-                <textarea name="newvalue"><?=$this->value?></textarea>
+                <textarea name="newvalue"><?php echo $this->value?></textarea>
             </div>
-            <input name="key" value="<?=$this->key?>" type="hidden" />
+            <input name="key" value="<?php echo $this->key?>" type="hidden" />
             <button type="submit" class="btn"><i class="icon-edit"></i> Edit</button>
         </form>
     <?php } ?>

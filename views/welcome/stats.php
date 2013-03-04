@@ -76,7 +76,7 @@
         $.each(methods, function(index, method) {
             $('#'+method+'_chart').empty();
             $.ajax({
-                url: '<?=$this->router->url?>/stats/'+method,
+                url: '<?php echo $this->router->url?>/stats/'+method,
                 dataType: 'json',
                 data: 'from='+from+'&to='+to,
                 success: function(data) {

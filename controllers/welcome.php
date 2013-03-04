@@ -48,8 +48,6 @@ class Welcome_Controller extends Controller
         $uptimeDays = floor($info['uptime_in_seconds'] / 86400);
         $dbSize     = $this->db->dbSize();
         $lastSave   = $this->db->lastSave();
-
-
         Template::factory()->render('welcome/info', array('info'       => $info,
                                                           'uptimeDays' => $uptimeDays,
                                                           'dbSize'     => $dbSize,

@@ -11,9 +11,9 @@
         </div>
     <?php } ?>
     <?php if (!isset($this->moved) || (isset($this->moved) && !$this->moved)) { ?>
-        <form class="form-search" action="<?=$this->router->url?>/keys/move" method="post">
+        <form class="form-search" action="<?php echo $this->router->url?>/keys/move" method="post">
             <legend>Move key</legend>
-            <input name="key" value="<?=$this->key?>" type="hidden" />
+            <input name="key" value="<?php echo $this->key?>" type="hidden" />
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-book"></i></span>
                 <input type="text" placeholder="DB Number" name="db">

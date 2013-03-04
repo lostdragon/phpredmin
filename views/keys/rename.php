@@ -11,13 +11,13 @@
         </div>
     <?php } ?>
     <?php if (!isset($this->renamed) || (isset($this->renamed) && !$this->renamed)) { ?>
-        <form class="form-search" action="<?=$this->router->url?>/keys/rename" method="post">
+        <form class="form-search" action="<?php echo $this->router->url?>/keys/rename" method="post">
             <legend>Rename key</legend>
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-key"></i></span>
-                <input type="text" value="<?=$this->key?>" name="newkey">
+                <input type="text" value="<?php echo $this->key?>" name="newkey">
             </div>
-            <input name="key" value="<?=$this->key?>" type="hidden" />
+            <input name="key" value="<?php echo $this->key?>" type="hidden" />
             <button type="submit" class="btn"><i class="icon-pencil"></i> Rename</button>
         </form>
     <?php } ?>

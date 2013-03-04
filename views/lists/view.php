@@ -1,11 +1,11 @@
 <?php $this->addHeader("<script src=\"{$this->router->baseUrl}/js/redmin/remlists.js\" type=\"text/javascript\"></script>"); ?>
 <div class="span12">
-    <?=$this->renderPartial('lists/add', array('oldkey' => $this->key))?>
-    <form class="form" action="<?=$this->router->url?>/lists/del" method="post">
+    <?php echo $this->renderPartial('lists/add', array('oldkey' => $this->key))?>
+    <form class="form" action="<?php echo $this->router->url?>/lists/del" method="post">
         <legend>Remove from List</legend>
         <div class="input-prepend" style="padding-right: 20px;">
             <span class="add-on"><i class="icon-key"></i></span>
-            <input type="hidden" value="<?=$this->key?>" name="key"/>
+            <input type="hidden" value="<?php echo $this->key?>" name="key"/>
             <input type="text" placeholder="Value" name="value">
         </div>
         <div>
@@ -18,7 +18,7 @@
         </div>
         <button type="submit" class="btn" id="add_list"><i class="icon-minus"></i> Remove</button>
     </form>
-    <h5><i class="icon-key"></i> <?=$this->key?></h5>
+    <h5><i class="icon-key"></i> <?php echo $this->key?></h5>
     <table class="table table-striped settable">
         <tr>
             <th>Value</th>
@@ -27,10 +27,10 @@
         <?php foreach ($this->values as $member => $value) { ?>
             <tr>
                 <td>
-                    <?=$member+1?>
+                    <?php echo $member+1?>
                 </td>
                 <td>
-                    <?=$value?>
+                    <?php echo $value?>
                 </td>
             </tr>
         <?php } ?>
@@ -40,12 +40,12 @@
     ?>
         <ul class="pager">
             <li class="previous <?php if ($this->page == 0) echo "disabled";?>">
-                <a href="<?=$this->router->url?>/zsets/view/<?=urlencode($this->key)?>/<?=$this->page - 1?>">&larr; Previous</a>
+                <a href="<?php echo $this->router->url?>/zsets/view/<?php echo urlencode($this->key)?>/<?php echo $this->page - 1?>">&larr; Previous</a>
             </li>
             <li class="next <?php if ($this->page == $ceil) echo "disabled";?>">
-                <a href="<?=$this->router->url?>/zsets/view/<?=urlencode($this->key)?>/<?=$this->page + 1?>">Next &rarr;</a>
+                <a href="<?php echo $this->router->url?>/zsets/view/<?php echo urlencode($this->key)?>/<?php echo $this->page + 1?>">Next &rarr;</a>
             </li>
         </ul>
     <?php } ?>
 </div>
-<?=$this->renderPartial('generalmodals')?>
+<?php echo $this->renderPartial('generalmodals')?>

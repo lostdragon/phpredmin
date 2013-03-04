@@ -1,7 +1,7 @@
-<?=$this->renderPartial('actions', array('nomove' => True))?>
+<?php echo $this->renderPartial('actions', array('nomove' => True))?>
 <div class="span12">
-    <?=$this->renderPartial('zsets/add', array('oldkey' => $this->key))?>
-    <h5><i class="icon-key"></i> <?=$this->key?></h5>
+    <?php echo $this->renderPartial('zsets/add', array('oldkey' => $this->key))?>
+    <h5><i class="icon-key"></i> <?php echo $this->key?></h5>
     <table class="table table-striped settable">
         <tr>
             <th>Value</th>
@@ -12,18 +12,18 @@
         <?php foreach ($this->values as $member => $value) { ?>
             <tr>
                 <td>
-                    <?=$member?>
+                    <?php echo $member?>
                 </td>
                 <td>
-                    <?=$value?>
+                    <?php echo $value?>
                 </td>
                 <td>
                     <a href="#" class="action del">
-                        <i class="icon-trash" id="<?=$member?>" keytype="zsets" keyinfo="<?=$this->key?>"></i>
+                        <i class="icon-trash" id="<?php echo $member?>" keytype="zsets" keyinfo="<?php echo $this->key?>"></i>
                     </a>
                 </td>
                 <td>
-                    <input type="checkbox" name="keys[]" value="<?=$member?>" />
+                    <input type="checkbox" name="keys[]" value="<?php echo $member?>" />
                 </td>
             </tr>
         <?php } ?>
@@ -33,7 +33,7 @@
                 </td>
                 <td>
                     <a href="#" class="action delall">
-                        <i class="icon-trash" keytype="zsets" keyinfo="<?=$this->key?>"></i>
+                        <i class="icon-trash" keytype="zsets" keyinfo="<?php echo $this->key?>"></i>
                     </a>
                 </td>
                 <td>
@@ -47,12 +47,12 @@
     ?>
         <ul class="pager">
             <li class="previous <?php if ($this->page == 0) echo "disabled";?>">
-                <a href="<?=$this->router->url?>/zsets/view/<?=urlencode($this->key)?>/<?=$this->page - 1?>">&larr; Previous</a>
+                <a href="<?php echo $this->router->url?>/zsets/view/<?php echo urlencode($this->key)?>/<?php echo $this->page - 1?>">&larr; Previous</a>
             </li>
             <li class="next <?php if ($this->page == $ceil) echo "disabled";?>">
-                <a href="<?=$this->router->url?>/zsets/view/<?=urlencode($this->key)?>/<?=$this->page + 1?>">Next &rarr;</a>
+                <a href="<?php echo $this->router->url?>/zsets/view/<?php echo urlencode($this->key)?>/<?php echo $this->page + 1?>">Next &rarr;</a>
             </li>
         </ul>
     <?php } ?>
 </div>
-<?=$this->renderPartial('generalmodals')?>
+<?php echo $this->renderPartial('generalmodals')?>

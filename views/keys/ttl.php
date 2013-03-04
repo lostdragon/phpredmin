@@ -15,7 +15,7 @@
         </div>
     <?php } ?>
     <?php if (!isset($this->updated) || (isset($this->updated) && !$this->updated)) { ?>
-        <form class="form-search" action="<?=$this->router->url?>/keys/expire" method="post">
+        <form class="form-search" action="<?php echo $this->router->url?>/keys/expire" method="post">
             <legend>key's Expiration</legend>
             <?php if ($this->ttl !== False && $this->ttl > 0) { ?>
                 <div>
@@ -26,7 +26,7 @@
                 <span class="add-on"><i class="icon-time"></i></span>
                 <input type="text" value="<?php if ($this->ttl > 0) { echo $this->ttl; } else { echo "0";}?>" name="ttl">
             </div>
-            <input name="key" value="<?=$this->key?>" type="hidden" />
+            <input name="key" value="<?php echo $this->key?>" type="hidden" />
             <button type="submit" class="btn"><i class="icon-pencil"></i> Update</button>
         </form>
     <?php } ?>
